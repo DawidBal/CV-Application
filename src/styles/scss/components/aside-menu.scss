@@ -1,0 +1,14 @@
+@use '../variables';
+
+.aside {
+    position: sticky;
+    padding: 1rem;
+    background-color: var(--aside-bd);
+    &__icon {
+        fill: var(--white);
+    }
+}
+
+.menu {
+    text-align: center;
+}

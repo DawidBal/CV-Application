@@ -1,0 +1,17 @@
+@use 'variables';
+
+.l-gap-1 {
+    gap: 1rem;
+}
+
+.l-gap-05 {
+    gap: 0.5rem;
+}
+
+.l-flexColumn {
+    @include variables.flexColumn;
+}
+
+.l-ai-c {
+    align-items: center;
+}

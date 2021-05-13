@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;700&display=swap");
+:root {
+  --main-bg: hsl(0, 0%, 10%);
+  --aside-bd: hsl(0, 0%, 15%);
+  --white: hsl(0, 100%, 100%);
+  --btn-bg: hsl(155, 100%, 30%);
+  --btn-bg-hover: hsl(155, 100%, 40%);
+  --btn-bg-active: hsl(155, 100%, 50%);
+}
+
+.aside {
+  position: sticky;
+  padding: 1rem;
+  background-color: var(--aside-bd);
+}
+.aside__icon {
+  fill: var(--white);
+}
+
+.menu {
+  text-align: center;
+}
+
+.btn {
+  border: transparent;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  background: var(--btn-bg);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: var(--btn-bg-hover);
+}
+.btn--active {
+  background: var(--btn-bg-active);
+}
+
+.l-gap-1 {
+  gap: 1rem;
+}
+
+.l-gap-05 {
+  gap: 0.5rem;
+}
+
+.l-flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.l-ai-c {
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  font-family: "Work Sans", sans-serif;
+  background: var(--main-bg);
+  color: var(--white);
+}
+
+.App {
+  display: grid;
+  min-height: 100%;
+  grid-template-columns: auto 2fr 3fr;
+}
+
+/*# sourceMappingURL=style.css.map */

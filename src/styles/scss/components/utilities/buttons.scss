@@ -1,0 +1,16 @@
+@use '../../variables';
+
+.btn {
+    border: transparent;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    background: var(--btn-bg);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    &:hover {
+        background: var(--btn-bg-hover);
+    }
+    &--active {
+        background: var(--btn-bg-active);
+    }
+}

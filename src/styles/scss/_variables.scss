@@ -1,0 +1,18 @@
+:root {
+    // Backgrounds
+    --main-bg: hsl(0, 0%, 10%);
+    --aside-bd: hsl(0, 0%, 15%);
+
+    // Font
+    --white: hsl(0, 100%, 100%);
+
+    // Buttons
+    --btn-bg: hsl(155, 100%, 30%);
+    --btn-bg-hover: hsl(155, 100%, 40%);
+    --btn-bg-active: hsl(155, 100%, 50%);
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
