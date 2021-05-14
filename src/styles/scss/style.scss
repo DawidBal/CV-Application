@@ -3,6 +3,7 @@
 @forward './components/generator.scss';
 @forward './components/preview.scss';
 @forward './components/utilities/buttons.scss';
+@forward './components/utilities/inputs.scss';
 @forward './global.scss';
 
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;700&display=swap");
@@ -19,4 +20,5 @@ body {
     display: grid;
     min-height: 100%;
     grid-template-columns: auto 2fr 3fr;
+    gap: 1rem;
 }
