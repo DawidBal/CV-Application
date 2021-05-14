@@ -1,28 +1,41 @@
 import React from 'react'
-import Input from '../Utilities/Input'
+import PersonalData from './PersonalData';
+import Education from './Education'
+import Experience from './Experience';
+import Additionals from './Additionals';
 
 
-const Generator = (props) => {
-    const { setData, data } = props
-    Input.defaultProps = {
-        type: 'text'
-    };
 
-    const updateData = (e) => {
-        const key = e.target.attributes.id.value;
-        const newName = {...data, [key]: e.target.value}
-        setData(newName);
+const Generator = ({states}) => {
+
+    const { 
+        personalData,
+        setPersonalData,
+        experience,
+        setExperience,
+        education,
+        setEducation,
+        additional,
+        setAdditional,
+        activeSection, 
+    } = states
+
+    const renderActiveSection = (activeSection) => {
+        if (activeSection.personal) {
+            return <PersonalData setData={setPersonalData} data={personalData} />
+        } else if (activeSection.education) {
+            return <Education setData={setEducation} data={education} />
+        } else if (activeSection.experience) {
+            return <Experience setData={setExperience} data={experience} />
+        } else {
+            <Additionals setData={setAdditional} data={additional} />
+        }
     }
 
     return (
         <div className="generator">
             <h2 className="generator__title">Insert data to generate CV</h2>
-            <Input title='First Name' value={data.firstName} onChange={updateData} id='firstName'/>
-            <Input title='Last Name' value={data.lastName} onChange={updateData} id='lastName'/>
-            <Input title='Role' value={data.role} onChange={updateData} id='role'/>
-            <Input title='Address' value={data.address} onChange={updateData} id='address'/>
-            <Input type='tel' title='Phone Number' value={data.phone} onChange={updateData} id='phone'/>
-            <Input type='email' title='Email' value={data.email} onChange={updateData} id='email'/>
+            {renderActiveSection(activeSection)}
         </div>
     )
 

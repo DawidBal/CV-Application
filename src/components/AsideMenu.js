@@ -2,6 +2,27 @@ import React from 'react'
 import Button from './Utilities/Button'
 
 const AsideMenu = (props) => {
+    const {activeSection, setActiveSection} = props;
+
+    const changeActiveSection = (e, section) => {
+        updateClassList(e);
+        const newSection = Object.keys(activeSection).reduce((obj, key) => {
+            if(key === section) {
+                obj[key] = true;
+            } else {
+                obj[key] = false;
+            }
+            return obj
+        }, {});
+        setActiveSection(newSection);
+    }
+
+    const updateClassList = (e) => {
+        const btns = document.querySelectorAll('.btn');
+        btns.forEach(btn => btn.classList.remove('btn--active'));
+        e.target.classList.add('btn--active');
+    }
+
     return (
         <aside className="aside l-flexColumn l-ai-c">
             <svg className="aside__icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
@@ -10,10 +31,10 @@ const AsideMenu = (props) => {
             <h1 className="aside__title">CV Generator</h1>
             <div className="menu l-flexColumn l-gap-1">
                 <h2>Choose section</h2>
-                <Button title={"Personal Data"} className="btn btn--active"/>
-                <Button title={"Education"} className="btn"/>
-                <Button title={"Work Experience"} className="btn"/>
-                <Button title={"Additionals"} className="btn"/>
+                <Button title={"Personal Data"} onClick={(e) => changeActiveSection(e, 'personal')} className="btn btn--active"/>
+                <Button title={"Education"} onClick={(e) => changeActiveSection(e, 'education')} className="btn"/>
+                <Button title={"Work Experience"} onClick={(e) => changeActiveSection(e, 'experience')} className="btn"/>
+                <Button title={"Additionals"} onClick={(e) => changeActiveSection(e, 'additional')} className="btn"/>
             </div>
         </aside>
     )

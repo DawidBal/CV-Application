@@ -22,12 +22,32 @@ const App = () => {
   const [experience, setExperience] = useState([])
   const [education, setEducation] = useState([])
   const [additional, setAdditional] = useState({})
-  console.log(personalData);
+  const [activeSection, setActiveSection] = useState({
+    personal: true,
+    education: false,
+    experience: false,
+    additional: false,
+  });
+
+  // Object to manage data in generator component
+  const states = {
+    personalData,
+    setPersonalData,
+    experience,
+    setExperience,
+    education,
+    setEducation,
+    additional,
+    setAdditional,
+    activeSection,
+    setActiveSection,
+  }
+
   return (
     <div className="App">
-      <AsideMenu />
-      <Generator setData={setPersonalData} data={personalData}/>
-      <Preview personalData={personalData} experience={experience} education={education} additional={additional}/>
+      <AsideMenu activeSection={activeSection} setActiveSection={setActiveSection}/>
+      <Generator states={states}/>
+      <Preview states={states}/>
     </div>
   )
 }

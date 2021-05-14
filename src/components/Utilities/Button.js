@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Button = (props) => {
-    const {title, className} = props
+    const {title, className, onClick} = props
     return (
-        <button className={className}>{title}</button>
+        <button className={className} onClick={onClick}>{title}</button>
     )
 }
 
