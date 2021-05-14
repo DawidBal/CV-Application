@@ -13,7 +13,11 @@ const App = () => {
     role: '',
     address: '',
     phone: '',
-    email: ''
+    email: '',
+    fb: '',
+    twitter: '',
+    linkedin: '',
+    github: ''
   }
 
 
