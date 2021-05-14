@@ -1,12 +1,12 @@
 import React from 'react'
 
 function Input(props) {
-    const {title, id, type} = props
+    const {title, id, type, onChange, value} = props
 
     return (
-        <div>
+        <div className="inputField l-flexColumn">
             <label htmlFor={id}>{title}: </label>
-            <input type={type} id={id} placeholder={title} />
+            <input className="input" type={type} id={id} value={value} onChange={onChange} placeholder={title} />
         </div>
     )
 }

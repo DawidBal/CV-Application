@@ -7,20 +7,27 @@ import Preview from './components/Preview/Preview'
 
 const App = () => {
 
-  //TODO: Make proper object to insert data from inputs
-  const initData = {
-    name: 'Lorem',
-    lastName: 'ipsum',
-    email: 'lorem@ipsum.com',
-    phone: 4242725490
+  const initPersonalData = {
+    firstName: '',
+    lastName: '',
+    role: '',
+    address: '',
+    phone: '',
+    email: ''
   }
-  const [data, setData] = useState();
 
+
+  // State hooks
+  const [personalData, setPersonalData] = useState(initPersonalData);
+  const [experience, setExperience] = useState([])
+  const [education, setEducation] = useState([])
+  const [additional, setAdditional] = useState({})
+  console.log(personalData);
   return (
     <div className="App">
       <AsideMenu />
-      <Generator />
-      <Preview />
+      <Generator setData={setPersonalData} data={personalData}/>
+      <Preview personalData={personalData} experience={experience} education={education} additional={additional}/>
     </div>
   )
 }
