@@ -14,6 +14,7 @@ const App = () => {
     address: '',
     phone: '',
     email: '',
+    summary: '',
     fb: '',
     twitter: '',
     linkedin: '',
@@ -25,7 +26,8 @@ const App = () => {
     city: '',
     role: '',
     dateFrom: '',
-    dateTo: ''
+    dateTo: '',
+    responsibilities: ''
   }
 
   const initSectionData = {
@@ -35,17 +37,16 @@ const App = () => {
   }
 
   const submitExperience = () => {
-    setExperience(experience.concat(experienceObj));
-    setExperienceObj(initExperienceData);
+    setExperienceList(experienceList.concat(experience));
+    setExperience(initExperienceData);
   }
 
   // State hooks
-  // TODO: Change setExperience/setEducationObj names
   const [personalData, setPersonalData] = useState(initPersonalData);
-  const [experience, setExperience] = useState([])
-  const [experienceObj, setExperienceObj] = useState(initExperienceData)
-  const [education, setEducation] = useState([])
-  const [educationObj, setEducationObj] = useState({})
+  const [experienceList, setExperienceList] = useState([])
+  const [experience, setExperience] = useState(initExperienceData)
+  const [educationList, setEducationList] = useState([])
+  const [education, setEducation] = useState({})
   const [activeSection, setActiveSection] = useState(initSectionData);
 
   // Object to manage data in generator component
@@ -54,18 +55,16 @@ const App = () => {
     setPersonalData,
     experience,
     setExperience,
-    experienceObj,
-    setExperienceObj,
+    experienceList,
+    setExperienceList,
     education,
     setEducation,
-    educationObj,
-    setEducationObj,
+    educationList,
+    setEducationList,
     activeSection,
     setActiveSection,
     submitExperience,
   }
-
-  console.log(experience);
 
   return (
     <div className="App">

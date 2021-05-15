@@ -1,5 +1,6 @@
 import React from 'react'
 import Input from '../Utilities/Input'
+import TextArea from '../Utilities/TextArea';
 
 const PersonalData = (props) => {
 
@@ -23,6 +24,13 @@ const PersonalData = (props) => {
             <Input title='Twitter' value={data.twitter} onChange={(e) => updateData(e, setData, data)} id='twitter' />
             <Input title='Linkedin' value={data.linkedin} onChange={(e) => updateData(e, setData, data)} id='linkedin' />
             <Input title='Github' value={data.github} onChange={(e) => updateData(e, setData, data)} id='github' />
+            <h3>Summary</h3>
+            <TextArea title='Summary'
+                value={data.summary}
+                onChange={(e) => updateData(e, setData, data)}
+                id='summary'
+                placeholder="Enter your CV summary"
+            />
         </div>
     )
 }

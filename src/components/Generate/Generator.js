@@ -9,10 +9,10 @@ const Generator = ({states}) => {
     const { 
         personalData,
         setPersonalData,
-        experienceObj,
-        setExperienceObj,
-        educationObj,
-        setEducationObj,
+        experience,
+        setExperience,
+        education,
+        setEducation,
         activeSection,
         submitExperience,
     } = states
@@ -27,9 +27,9 @@ const Generator = ({states}) => {
         if (activeSection.personal) {
             return <PersonalData updateData={updateData} setData={setPersonalData} data={personalData} />
         } else if (activeSection.education) {
-            return <Education updateData={updateData} setData={setEducationObj} data={educationObj} />
+            return <Education updateData={updateData} setData={setEducation} data={education} />
         } else if (activeSection.experience) {
-            return <Experience updateData={updateData} setData={setExperienceObj} data={experienceObj} submit={submitExperience} />
+            return <Experience updateData={updateData} setData={setExperience} data={experience} submit={submitExperience} />
         }
     }
 
