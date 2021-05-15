@@ -36,6 +36,14 @@ const App = () => {
     experience: false,
   }
 
+  const initEducationData = {
+    school: '',
+    city: '',
+    dateFrom: '',
+    dateTo: '',
+    degree: '',
+  }
+
   const submitExperience = () => {
     setExperienceList(experienceList.concat(experience));
     setExperience(initExperienceData);
@@ -46,7 +54,7 @@ const App = () => {
   const [experienceList, setExperienceList] = useState([])
   const [experience, setExperience] = useState(initExperienceData)
   const [educationList, setEducationList] = useState([])
-  const [education, setEducation] = useState({})
+  const [education, setEducation] = useState(initEducationData)
   const [activeSection, setActiveSection] = useState(initSectionData);
 
   // Object to manage data in generator component
