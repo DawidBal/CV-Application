@@ -1,7 +1,7 @@
 import React from 'react'
 import uniqid from "uniqid";
 
-const WorkExperience = ({data, dataList}) => {
+const Experience = ({ data, dataList }) => {
 
     const WorkList = () => {
         return (
@@ -26,10 +26,11 @@ const WorkExperience = ({data, dataList}) => {
     
     return (
         <div>
+            <h2>Experience</h2>
             <WorkList />
             <Work workData={data} className="Static"/>
         </div>
     )
 }
 
-export default WorkExperience
+export default Experience
