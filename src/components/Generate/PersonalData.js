@@ -18,7 +18,7 @@ const PersonalData = (props) => {
             <Input title='Role' value={data.role} onChange={(e) => updateData(e, setData, data)} id='role' />
             <Input title='Address' value={data.address} onChange={(e) => updateData(e, setData, data)} id='address' />
             <Input type='tel' title='Phone Number' value={data.phone} onChange={(e) => updateData(e, setData, data)} id='phone' />
-            <Input type='email' title='Email' value={data.email} onChange={(e) => updateData(e, setData, data)} id='email' />
+            <Input type='email' title='Email' value={data.email} onChange={(e) => updateData(e, setData, data)} id='email' placeholder="example@email.com" />
             <h3>Socials</h3>
             <Input title='Facebook' value={data.fb} onChange={(e) => updateData(e, setData, data)} id='fb' />
             <Input title='Twitter' value={data.twitter} onChange={(e) => updateData(e, setData, data)} id='twitter' />
@@ -29,7 +29,7 @@ const PersonalData = (props) => {
                 value={data.summary}
                 onChange={(e) => updateData(e, setData, data)}
                 id='summary'
-                placeholder="Enter your CV summary"
+                placeholder="Write down short CV summarize"
             />
         </div>
     )
