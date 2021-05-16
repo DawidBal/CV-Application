@@ -5,18 +5,18 @@ const Education = ({ data, dataList }) => {
 
     const EducationList = () => {
         return (
-            dataList.map(work => <Education key={uniqid()} EducationData={work} className="Dynamic" />)
+            dataList.map(work => <Education key={uniqid()} EducationData={work} />)
         )
     }
 
     const Education = (props) => {
-        const { school, city, role, dateFrom, dateTo } = props.EducationData;
+        const { school, city, degree, dateFrom, dateTo } = props.EducationData;
 
         return (
             <div className={props.className}>
                 <p>{school}</p>
                 <p>{city}</p>
-                <p>{role}</p>
+                <p>{degree}</p>
                 <p>{dateFrom} - {dateTo}</p>
             </div>
         )
@@ -27,7 +27,7 @@ const Education = ({ data, dataList }) => {
         <div>
             <h2>Education</h2>
             <EducationList />
-            <Education EducationData={data} className="Static" />
+            <Education EducationData={data} />
         </div>
     )
 }

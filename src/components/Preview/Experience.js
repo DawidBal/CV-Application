@@ -5,7 +5,7 @@ const Experience = ({ data, dataList }) => {
 
     const WorkList = () => {
         return (
-            dataList.map(work => <Work key={uniqid()} workData={work} className="Dynamic" />)
+            dataList.map(work => <Work key={uniqid()} workData={work} />)
         )
     }
 
@@ -23,12 +23,11 @@ const Experience = ({ data, dataList }) => {
         )
     }
 
-    
     return (
         <div>
             <h2>Experience</h2>
             <WorkList />
-            <Work workData={data} className="Static"/>
+            <Work workData={data}/>
         </div>
     )
 }
