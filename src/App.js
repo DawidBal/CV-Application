@@ -4,6 +4,7 @@ import { useState } from 'react';
 import AsideMenu from './components/AsideMenu'
 import Generator from './components/Generate/Generator'
 import Preview from './components/Preview/Preview'
+import uniqid from "uniqid";
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
   }
 
   const initExperienceData = {
+    id: '',
     companyName: '',
     city: '',
     role: '',
@@ -37,6 +39,7 @@ const App = () => {
   }
 
   const initEducationData = {
+    id: '',
     school: '',
     city: '',
     dateFrom: '',
@@ -45,6 +48,7 @@ const App = () => {
   }
 
   const submitExperience = () => {
+    experience.id = uniqid();
     setExperienceList(experienceList.concat(experience));
     setExperience(initExperienceData);
   }
