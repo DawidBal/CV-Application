@@ -52,7 +52,12 @@ const App = () => {
     setExperienceList(experienceList.concat(experience));
     setExperience(initExperienceData);
   }
-
+  
+  const submitEducation = () => {
+    education.id = uniqid();
+    setEducationList(educationList.concat(education));
+    setEducation(initEducationData);
+  }
   // State hooks
   const [personalData, setPersonalData] = useState(initPersonalData);
   const [experienceList, setExperienceList] = useState([])
@@ -76,6 +81,7 @@ const App = () => {
     activeSection,
     setActiveSection,
     submitExperience,
+    submitEducation,
   }
 
   return (
