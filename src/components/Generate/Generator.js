@@ -36,17 +36,35 @@ const Generator = ({states}) => {
         setDataList(newArr);
     }
 
+    const removeData = (dataList, setDataList, index) => {
+        const newArr = [...dataList];
+        newArr.splice(index, 1);
+        setDataList(newArr);
+    }
+
+    const setObjData = (data, setData) => {
+        const newDate = { ...data, 'dateTo': "Present" }
+        setData(newDate);
+    }
+
+    const setObjDataInArr = (index, data, dataList, setDataList) => {
+        const newDate = { ...data, 'dateTo': "Present" }
+        const newArr = [...dataList];
+        newArr.splice(index, 1, newDate);
+        setDataList(newArr);
+    }
+
     const renderActiveSection = () => {
         if (activeSection.personal) {
             return <PersonalData updateData={updateData} setData={setPersonalData} data={personalData} />
         } else if (activeSection.education) {
             return <Education updateData={updateData} updateListData={updateListData}
                 setData={setEducation} data={education} setDataList={setEducationList}
-                dataList={educationList} submit={submitEducation}/>
+                dataList={educationList} submit={submitEducation} remove={removeData} setObjData={setObjData} setObjDataInArr={setObjDataInArr}/>
         } else if (activeSection.experience) {
             return <Experience updateData={updateData} updateListData={updateListData}
                 setData={setExperience} data={experience} setDataList={setExperienceList}
-                dataList={experienceList} submit={submitExperience}/>
+                dataList={experienceList} submit={submitExperience} remove={removeData} setObjData={setObjData} setObjDataInArr={setObjDataInArr}/>
         }
     }
 
