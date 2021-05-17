@@ -1,10 +1,12 @@
 :root {
     // Backgrounds
     --main-bg: hsl(0, 0%, 10%);
-    --aside-bd: hsl(0, 0%, 15%);
+    --aside-bg: hsl(0, 0%, 15%);
 
     // Font
     --white: hsl(0, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --main: hsl(44deg 95% 55%);
 
     // Buttons
     --btn-bg: hsl(155, 100%, 30%);
@@ -15,4 +17,9 @@
 @mixin flexColumn {
     display: flex;
     flex-direction: column;
+}
+
+@mixin CVLayout {
+    display: grid;
+    grid-template-columns: 30% 1fr;
 }

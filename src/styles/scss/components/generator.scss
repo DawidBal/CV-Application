@@ -1,4 +1,10 @@
 .generator {
+    height: 95vh;
+    overflow-y: auto;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    margin: 0.5rem;
+
     &__title {
     }
 }

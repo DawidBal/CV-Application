@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;700&display=swap");
 :root {
   --main-bg: hsl(0, 0%, 10%);
-  --aside-bd: hsl(0, 0%, 15%);
+  --aside-bg: hsl(0, 0%, 15%);
   --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --main: hsl(44deg 95% 55%);
   --btn-bg: hsl(155, 100%, 30%);
   --btn-bg-hover: hsl(155, 100%, 40%);
   --btn-bg-active: hsl(155, 100%, 50%);
@@ -11,7 +12,7 @@
 .aside {
   position: sticky;
   padding: 1rem;
-  background-color: var(--aside-bd);
+  background-color: var(--aside-bg);
 }
 .aside__icon {
   fill: var(--white);
@@ -19,6 +20,87 @@
 
 .menu {
   text-align: center;
+}
+
+.generator {
+  height: 95vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  margin: 0.5rem;
+}
+.preview {
+  align-self: center;
+  min-width: 210mm;
+  max-width: 210mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 20% 1fr;
+  color: var(--black);
+}
+.preview__personal {
+  padding: 1rem;
+  background: var(--aside-bg);
+  color: var(--white);
+}
+.preview__details {
+  padding: 0 2rem;
+}
+.preview__summary > .text {
+  padding-left: 0.3em;
+  border-left: 4px solid var(--aside-bg);
+}
+
+.header {
+  margin: 1rem 0 1rem 2rem;
+  align-self: center;
+}
+.header__name {
+  margin-right: 2rem;
+  font-size: 3rem;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+.header__role {
+  position: relative;
+  margin-top: 0.2em;
+  padding: 0.5rem 1rem;
+  letter-spacing: 1.3px;
+  color: var(--white);
+  font-size: 1.5rem;
+  background: var(--aside-bg);
+}
+.header__role::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  right: 20px;
+  top: 0;
+  background: var(--white);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  background: var(--white);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  background: var(--white);
+}
+
+.title {
+  color: var(--main);
+  border-bottom: 2px solid var(--main);
+}
+
+.text {
+  overflow-wrap: anywhere;
 }
 
 .btn {
@@ -63,6 +145,26 @@
   align-items: center;
 }
 
+.icon--preview {
+  margin-right: 0.5em;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   min-height: 100vh;
   display: grid;
@@ -74,7 +176,7 @@ body {
 .App {
   display: grid;
   min-height: 100%;
-  grid-template-columns: auto 2fr 3fr;
+  grid-template-columns: auto 2fr 2fr;
   gap: 1rem;
 }
 

@@ -15,3 +15,25 @@
 .l-ai-c {
     align-items: center;
 }
+
+.icon {
+    &--preview {
+        margin-right: 0.5em;
+    }
+}
+
+.thin {
+    font-weight: 300;
+}
+
+img {
+    max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
