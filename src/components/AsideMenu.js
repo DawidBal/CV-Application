@@ -1,3 +1,4 @@
+import { faBook, faBriefcase, faUser } from '@fortawesome/free-solid-svg-icons';
 import React from 'react'
 import Button from './Utilities/Button'
 
@@ -32,9 +33,9 @@ const AsideMenu = (props) => {
             <h1 className="aside__title">CV Generator</h1>
             <div className="menu l-flexColumn l-gap-1">
                 <h2>Choose section</h2>
-                <Button title={"Personal Data"} onClick={(e) => changeActiveSection(e, 'personal')} className="btn btn--active"/>
-                <Button title={"Education"} onClick={(e) => changeActiveSection(e, 'education')} className="btn"/>
-                <Button title={"Work Experience"} onClick={(e) => changeActiveSection(e, 'experience')} className="btn"/>
+                <Button title={"Personal Data"} onClick={(e) => changeActiveSection(e, 'personal')} className="btn btn--active" icon={faUser}/>
+                <Button title={"Education"} onClick={(e) => changeActiveSection(e, 'education')} className="btn" icon={faBook}/>
+                <Button title={"Work Experience"} onClick={(e) => changeActiveSection(e, 'experience')} className="btn" icon={faBriefcase}/>
             </div>
         </aside>
     )
