@@ -13,11 +13,11 @@ const Education = ({ data, dataList }) => {
         const { school, city, degree, dateFrom, dateTo } = props.EducationData;
 
         return (
-            <div className={props.className}>
-                <p>{school}</p>
-                <p>{city}</p>
-                <p>{degree}</p>
-                <p>{dateFrom} - {dateTo}</p>
+            <div className="preview__education l-flexColumn l-gap-05">
+                <p className="text">{school}</p>
+                <p className="text">{city}</p>
+                <p className="text">{degree}</p>
+                <p className="text">{dateFrom} - {dateTo}</p>
             </div>
         )
     }
@@ -25,7 +25,7 @@ const Education = ({ data, dataList }) => {
 
     return (
         <div>
-            <h2>Education</h2>
+            <h2 className="title">Education</h2>
             <EducationList />
             <Education EducationData={data} />
         </div>

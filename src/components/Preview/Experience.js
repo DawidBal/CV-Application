@@ -13,19 +13,19 @@ const Experience = ({ data, dataList }) => {
         const { companyName, city, role, dateFrom, dateTo, responsibilities } = props.workData;
 
         return (
-            <div className={props.className}>
-                <p>{companyName}</p>
-                <p>{city}</p>
-                <p>{role}</p>
-                <p>{dateFrom} - {dateTo}</p>
-                <p>{responsibilities}</p>
+            <div className="preview__experience l-flexColumn l-gap-05">
+                <p className="text">{companyName}</p>
+                <p className="text">{city}</p>
+                <p className="text">{role}</p>
+                <p className="text">{dateFrom} - {dateTo}</p>
+                <p className="text">{responsibilities}</p>
             </div>
         )
     }
 
     return (
         <div>
-            <h2>Experience</h2>
+            <h2 className="title">Experience</h2>
             <WorkList />
             <Work workData={data}/>
         </div>

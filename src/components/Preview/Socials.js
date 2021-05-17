@@ -1,18 +1,17 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Socials = ({socialData}) => {
 
     const { fb, twitter, linkedin, github } = socialData;
-
-    // TODO: Create component text with icon
-    // TODO: Change social displaying method
     return (
-        <div className="socials">
-            <p className="title">Socials</p>
-            {fb === '' ? null : <p><span>Icon!</span> {fb} </p>}
-            {twitter === '' ? null : <p><span>Icon!</span> {twitter} </p>}
-            {github === '' ? null : <p><span>Icon!</span> {github} </p>}
-            {linkedin === '' ? null : <p><span>Icon!</span> {linkedin} </p>}
+        <div className="preview__socials l-flexColumn l-gap-05">
+            <h2 className="title">Socials</h2>
+            {fb === '' ? null : <p className="text">{<FontAwesomeIcon className='icon icon--preview' icon={faFacebook} />}{fb}</p>}
+            {twitter === '' ? null : <p className="text">{<FontAwesomeIcon className='icon icon--preview' icon={faTwitter} />}{twitter} </p>}
+            {github === '' ? null : <p className="text">{<FontAwesomeIcon className='icon icon--preview' icon={faGithub} />}{github} </p>}
+            {linkedin === '' ? null : <p className="text">{<FontAwesomeIcon className='icon icon--preview' icon={faLinkedin} />} {linkedin} </p>}
         </div>
     )
 }
