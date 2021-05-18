@@ -137,6 +137,8 @@
 
 .text {
   display: flex;
+  align-items: flex-start;
+  line-height: 1.05;
   overflow-wrap: anywhere;
 }
 
