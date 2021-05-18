@@ -4,11 +4,19 @@ import TextArea from '../Utilities/TextArea';
 
 const PersonalData = (props) => {
 
-    const { setData, data, updateData } = props
+    const { setData, data, updateData, setPhotoFile } = props
 
     Input.defaultProps = {
         type: 'text'
     };
+
+    const handlePhotoUpdate = (e) => {
+        try {
+            return e.target.files[0].type.includes('image') ? setPhotoFile(URL.createObjectURL(e.target.files[0])) : null
+        } catch {
+            setPhotoFile(null);
+        }
+    }
 
     return (
         <div className="personal-data l-flexColumn l-gap-05">
@@ -22,6 +30,7 @@ const PersonalData = (props) => {
             <Input title='Address' value={data.address} onChange={(e) => updateData(e, setData, data)} name='address' id='address' />
             <Input type='tel' title='Phone Number' value={data.phone} onChange={(e) => updateData(e, setData, data)} name='phone' id='phone' />
             <Input type='email' title='Email' value={data.email} onChange={(e) => updateData(e, setData, data)} name='email' id='email' placeholder="example@email.com" />
+                <Input type='file' title="Photo" onChange={(e) => handlePhotoUpdate(e)} name='photo' id='photo'/>
             </div>
             <h3 className="section-title">Socials</h3>
             <div className="form">

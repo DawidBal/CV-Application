@@ -18,6 +18,8 @@ const Generator = ({states}) => {
         activeSection,
         submitExperience,
         submitEducation,
+        photoFile,
+        setPhotoFile,
     } = states
 
     // Get key of object with name attribute, change that key value with input event and update state
@@ -56,7 +58,7 @@ const Generator = ({states}) => {
 
     const renderActiveSection = () => {
         if (activeSection.personal) {
-            return <PersonalData updateData={updateData} setData={setPersonalData} data={personalData} />
+            return <PersonalData updateData={updateData} setData={setPersonalData} data={personalData} photoFile={photoFile} setPhotoFile={setPhotoFile} />
         } else if (activeSection.education) {
             return <Education updateData={updateData} updateListData={updateListData}
                 setData={setEducation} data={education} setDataList={setEducationList}

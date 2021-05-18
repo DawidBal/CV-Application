@@ -9,11 +9,11 @@ import profilePhoto from '../../blankProfile.svg'
 import Skills from './Skills'
 
 const Preview = ({states}) => {
-    const { personalData, experience, experienceList, education, educationList } = states
+    const { personalData, experience, experienceList, education, educationList, photoFile } = states
     return (
         <div className="preview">
             <div className="head">
-                <img className="head__photo" src={profilePhoto} alt="" />
+                <img className="head__photo" src={photoFile === null ? profilePhoto : photoFile} alt="" />
                  <Header data={personalData} />
             </div>
             <div className="body">

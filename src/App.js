@@ -66,6 +66,7 @@ const App = () => {
   const [educationList, setEducationList] = useState([])
   const [education, setEducation] = useState(initEducationData)
   const [activeSection, setActiveSection] = useState(initSectionData);
+  const [photoFile, setPhotoFile] = useState(null);
 
   // Object to manage data in generator component
   const states = {
@@ -81,6 +82,8 @@ const App = () => {
     setEducationList,
     activeSection,
     setActiveSection,
+    photoFile,
+    setPhotoFile,
     submitExperience,
     submitEducation,
   }
