@@ -25,6 +25,11 @@ const PersonalData = (props) => {
             <Input title='Linkedin' value={data.linkedin} onChange={(e) => updateData(e, setData, data)} name='linkedin' id='linkedin' />
             <Input title='Github' value={data.github} onChange={(e) => updateData(e, setData, data)} name='github' id='github' />
             <h3>Summary</h3>
+            <h3 className="section-title">Skills</h3>
+            <div className="form">
+            <Input title='Skills' value={data.skills} 
+            onChange={(e) => updateData(e, setData, data)} name='skills' id='skills' placeholder={"Write down a list of skills separated by commas "} />
+            </div>
             <TextArea title='Summary'
                 value={data.summary}
                 onChange={(e) => updateData(e, setData, data)}

@@ -15,11 +15,12 @@ const App = () => {
     address: '',
     phone: '',
     email: '',
-    summary: '',
     fb: '',
     twitter: '',
     linkedin: '',
-    github: ''
+    github: '',
+    skills: '',
+    summary: '',
   }
 
   const initExperienceData = {
