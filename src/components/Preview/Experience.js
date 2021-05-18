@@ -1,11 +1,10 @@
 import React from 'react'
-import uniqid from "uniqid";
 
 const Experience = ({ data, dataList }) => {
 
     const WorkList = () => {
         return (
-            dataList.map(work => <Work key={uniqid()} workData={work} />)
+            dataList.map((work, index) => <Work key={index} workData={work} />)
         )
     }
 
@@ -13,18 +12,18 @@ const Experience = ({ data, dataList }) => {
         const { companyName, city, role, dateFrom, dateTo, responsibilities } = props.workData;
 
         return (
-            <div className="preview__experience l-flexColumn l-gap-05">
-                <p className="text">{companyName}</p>
-                <p className="text">{city}</p>
-                <p className="text">{role}</p>
-                <p className="text">{dateFrom} - {dateTo}</p>
-                <p className="text">{responsibilities}</p>
+            <div className="preview__experience l-flexColumn">
+                <p className="text name">{companyName}</p>
+                <p className="text role">{role}</p>
+                <p className="text city">{city}</p>
+                <p className="text date">{dateFrom} - {dateTo}</p>
+                <p className="text responsibility">{responsibilities}</p>
             </div>
         )
     }
 
     return (
-        <div>
+        <div className="l-flexColumn l-gap-1">
             <h2 className="title">Experience</h2>
             <WorkList />
             <Work workData={data}/>

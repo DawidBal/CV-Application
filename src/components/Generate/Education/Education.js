@@ -7,8 +7,8 @@ const Education = (props) => {
     const { data, setData, dataList, setDataList, setObjData, setObjDataInArr, updateData, updateListData, submit, remove } = props
 
     return (
-        <div className="Education">
-            <h3>Education</h3>
+        <div className="education l-flexColumn l-gap-05">
+            <h3 className="section-title">Education</h3>
             { 
             dataList.map((eduItem, index) => 
             <EducationForm key={eduItem.id} data={eduItem}

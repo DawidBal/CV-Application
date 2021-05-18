@@ -6,6 +6,7 @@ import Socials from './Socials'
 import Experience from './Experience'
 import Education from './Education'
 import profilePhoto from '../../blankProfile.svg'
+import Skills from './Skills'
 
 const Preview = ({states}) => {
     const { personalData, experience, experienceList, education, educationList } = states
@@ -18,7 +19,8 @@ const Preview = ({states}) => {
             <div className="body">
                 <div className="preview__personal l-flexColumn l-gap-1">
                     <Contact data={personalData}/>
-                    <Socials socialData={personalData}/>
+                    <Socials data={personalData}/>
+                    <Skills data={personalData} />
                 </div>
                 <div className="preview__details l-flexColumn l-gap-1">
                     <Summary data={personalData} />

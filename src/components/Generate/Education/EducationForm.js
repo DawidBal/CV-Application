@@ -8,12 +8,16 @@ const EducationForm = (props) => {
     return (
         <div className='education__form'>
             <Input id={id} title='School Name' value={data.school} onChange={onChange} name='school' />
-            <Input id={id} title='City' value={data.city} onChange={onChange} name='city' />
             <Input id={id} title='Degree' value={data.degree} onChange={onChange} name='degree' />
-            <Input id={id} type='date' title='From' value={data.dateFrom} onChange={onChange} name='dateFrom' />
-            <Input id={id} type='date' title='To' value={data.dateTo} onChange={onChange} name='dateTo' />
-            {remove === undefined ? null : <Button className='btn' title={'Remove'} onClick={remove} icon={faTrash} />}
-            <Button className='btn' title={'Present'} onClick={setDataPresent} icon={faCalendarDay} />
+            <Input id={id} title='City' value={data.city} onChange={onChange} name='city' />
+            <div className="field-wrapper l-flex l-gap-05">
+                <Input id={id} type='date' title='From' value={data.dateFrom} onChange={onChange} name='dateFrom' />
+                <Input id={id} type='date' title='To' value={data.dateTo} onChange={onChange} name='dateTo' />
+            </div>
+            <div className="field-buttons l-flex l-gap-05">
+                {remove === undefined ? null : <Button className='btn' title={'Remove'} onClick={remove} icon={faTrash} />}
+                <Button className='btn' title={'Present'} onClick={setDataPresent} icon={faCalendarDay} />
+            </div>
         </div>
     )
 }

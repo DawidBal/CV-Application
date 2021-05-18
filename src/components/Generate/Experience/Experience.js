@@ -7,8 +7,8 @@ const Experience = (props) => {
 	const { data, setData, dataList, setDataList, setObjData, setObjDataInArr, updateData, updateListData, submit, remove } = props
 
     return (
-        <div className="experience">
-        	<h3>Experience</h3>
+        <div className="experience l-flexColumn l-gap-05">
+        	<h3 className="section-title">Experience</h3>
             { 
 							dataList.map((expItem, index) => 
 							<ExperienceForm key={expItem.id} id={expItem.id} data={expItem}
@@ -18,7 +18,7 @@ const Experience = (props) => {
 							/> )
             }
             <ExperienceForm data={data} setDataPresent={() => setObjData(data, setData)} onChange={(e) => updateData(e, setData, data)}/>
-            <Button className="btn" title="Add" onClick={submit} icon={faPlus} />
+            <Button className="btn btn--add" title="Add" onClick={submit} icon={faPlus} />
         </div>
     )
 }
