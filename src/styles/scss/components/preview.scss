@@ -1,7 +1,8 @@
 @use '../variables';
 
 .preview {
-    align-self: center;
+    position: sticky;
+    top: 10px;
     min-width: 210mm;
     max-width: 210mm;
     min-height: 297mm;
@@ -13,6 +14,7 @@
     &__personal {
         padding: 1rem;
         background: var(--aside-bg);
+        font-size: 0.875rem;
         color: var(--white);
     }
     &__details {
@@ -21,6 +23,7 @@
     &__summary > .text {
         padding-left: 0.3em;
         border-left: 4px solid var(--aside-bg);
+        font-style: italic;
     }
 }
 
@@ -63,10 +66,26 @@
     background: var(--white);
 }
 
+.name {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.city {
+    opacity: 0.6;
+}
+
+.role,
+.degree {
+    font-size: 1.1rem;
+}
+
 .title {
+    font-size: 1.5rem;
     color: var(--main);
     border-bottom: 2px solid var(--main);
 }
 .text {
+    display: flex;
     overflow-wrap: anywhere;
 }

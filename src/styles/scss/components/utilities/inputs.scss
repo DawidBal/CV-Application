@@ -1,11 +1,14 @@
 @use '../../variables';
 
 .inputField {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
+    gap: 0.2em;
 }
 
 .input {
-    border: 1px solid white;
+    border: 1px solid var(--aside-bg);
     border-radius: 5px;
     padding: 0.3em;
+    background: var(--aside-bg);
+    color: var(--white);
 }

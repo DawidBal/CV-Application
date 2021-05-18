@@ -1,14 +1,18 @@
 @use '../variables';
 
 .aside {
-    position: sticky;
     padding: 1rem;
     background-color: var(--aside-bg);
     &__icon {
         fill: var(--white);
     }
+    &__title {
+        color: var(--btn-bg-active);
+    }
 }
 
 .menu {
+    position: sticky;
+    top: 0;
     text-align: center;
 }

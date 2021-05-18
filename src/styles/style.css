@@ -3,34 +3,51 @@
   --aside-bg: hsl(0, 0%, 15%);
   --white: hsl(0, 100%, 100%);
   --black: hsl(0, 0%, 0%);
-  --main: hsl(44deg 95% 55%);
+  --main: hsl(44, 95%, 55%);
+  --secondary: hsl(155, 100%, 40%);
   --btn-bg: hsl(155, 100%, 30%);
   --btn-bg-hover: hsl(155, 100%, 40%);
   --btn-bg-active: hsl(155, 100%, 50%);
 }
 
 .aside {
-  position: sticky;
   padding: 1rem;
   background-color: var(--aside-bg);
 }
 .aside__icon {
   fill: var(--white);
 }
+.aside__title {
+  color: var(--btn-bg-active);
+}
 
 .menu {
+  position: sticky;
+  top: 0;
   text-align: center;
 }
 
 .generator {
-  height: 95vh;
-  overflow-y: auto;
   padding-right: 1rem;
   padding-bottom: 1rem;
   margin: 0.5rem;
 }
+.generator__title {
+  padding: 0.5em 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--secondary);
+}
+
+.field-wrapper > * {
+  flex: 1;
+}
+
 .preview {
-  align-self: center;
+  position: sticky;
+  top: 10px;
   min-width: 210mm;
   max-width: 210mm;
   min-height: 297mm;
@@ -43,6 +60,7 @@
 .preview__personal {
   padding: 1rem;
   background: var(--aside-bg);
+  font-size: 0.875rem;
   color: var(--white);
 }
 .preview__details {
@@ -51,6 +69,7 @@
 .preview__summary > .text {
   padding-left: 0.3em;
   border-left: 4px solid var(--aside-bg);
+  font-style: italic;
 }
 
 .header {
@@ -94,12 +113,28 @@
   background: var(--white);
 }
 
+.name {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.city {
+  opacity: 0.6;
+}
+
+.role,
+.degree {
+  font-size: 1.1rem;
+}
+
 .title {
+  font-size: 1.5rem;
   color: var(--main);
   border-bottom: 2px solid var(--main);
 }
 
 .text {
+  display: flex;
   overflow-wrap: anywhere;
 }
 
@@ -119,13 +154,16 @@
 }
 
 .inputField {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
+  gap: 0.2em;
 }
 
 .input {
-  border: 1px solid white;
+  border: 1px solid var(--aside-bg);
   border-radius: 5px;
   padding: 0.3em;
+  background: var(--aside-bg);
+  color: var(--white);
 }
 
 .l-gap-1 {
@@ -134,6 +172,10 @@
 
 .l-gap-05 {
   gap: 0.5rem;
+}
+
+.l-flex {
+  display: flex;
 }
 
 .l-flexColumn {
@@ -157,6 +199,12 @@ img {
   max-width: 100%;
 }
 
+ul {
+  list-style: none;
+}
+
+ul,
+li,
 p,
 h1,
 h2,

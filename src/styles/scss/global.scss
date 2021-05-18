@@ -8,6 +8,10 @@
     gap: 0.5rem;
 }
 
+.l-flex {
+    display: flex;
+}
+
 .l-flexColumn {
     @include variables.flexColumn;
 }
@@ -30,6 +34,12 @@ img {
     max-width: 100%;
 }
 
+ul {
+    list-style: none;
+}
+
+ul,
+li,
 p,
 h1,
 h2,
