@@ -1,10 +1,10 @@
 import { faBook, faBriefcase, faUser } from '@fortawesome/free-solid-svg-icons';
 import React from 'react'
+import ReactToPrint from 'react-to-print';
 import Button from './Utilities/Button'
 
 const AsideMenu = (props) => {
-    const {activeSection, setActiveSection} = props;
-
+    const {activeSection, setActiveSection, componentRef} = props;
     const changeActiveSection = (e, section) => {
         updateClassList(e);
         const newSection = Object.keys(activeSection).reduce((obj, key) => {
@@ -34,8 +34,12 @@ const AsideMenu = (props) => {
             <div className="menu l-flexColumn l-gap-1">
                 <h2>Choose section</h2>
                 <Button title={"Personal Data"} onClick={(e) => changeActiveSection(e, 'personal')} className="btn btn--active" icon={faUser}/>
-                <Button title={"Education"} onClick={(e) => changeActiveSection(e, 'education')} className="btn" icon={faBook}/>
                 <Button title={"Work Experience"} onClick={(e) => changeActiveSection(e, 'experience')} className="btn" icon={faBriefcase}/>
+                <Button title={"Education"} onClick={(e) => changeActiveSection(e, 'education')} className="btn" icon={faBook}/>
+                <ReactToPrint 
+                trigger={() => <button className="btn btn--print">Print CV</button>}
+                content={() => componentRef.current}
+                />
             </div>
         </aside>
     )

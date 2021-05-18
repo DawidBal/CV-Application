@@ -1,9 +1,9 @@
-import './styles/normalize.css'
-import './styles/style.css'
-import { useState } from 'react';
-import AsideMenu from './components/AsideMenu'
-import Generator from './components/Generate/Generator'
-import Preview from './components/Preview/Preview'
+import './styles/normalize.css';
+import './styles/style.css';
+import { useState, useRef } from 'react';
+import AsideMenu from './components/AsideMenu';
+import Generator from './components/Generate/Generator';
+import Preview from './components/Preview/Preview';
 import uniqid from "uniqid";
 
 const App = () => {
@@ -68,6 +68,9 @@ const App = () => {
   const [activeSection, setActiveSection] = useState(initSectionData);
   const [photoFile, setPhotoFile] = useState(null);
 
+  // Ref hooks
+  const printRef = useRef();
+
   // Object to manage data in generator component
   const states = {
     personalData,
@@ -86,13 +89,14 @@ const App = () => {
     setPhotoFile,
     submitExperience,
     submitEducation,
+    printRef,
   }
 
   return (
     <div className="App">
-      <AsideMenu activeSection={activeSection} setActiveSection={setActiveSection}/>
+      <AsideMenu componentRef={printRef} activeSection={activeSection} setActiveSection={setActiveSection}/>
       <Generator states={states}/>
-      <Preview states={states}/>
+      <Preview ref={printRef} states={states}/>
     </div>
   )
 }

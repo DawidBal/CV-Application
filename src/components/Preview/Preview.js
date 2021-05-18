@@ -8,10 +8,10 @@ import Education from './Education'
 import profilePhoto from '../../blankProfile.svg'
 import Skills from './Skills'
 
-const Preview = ({states}) => {
+const Preview = React.forwardRef(({states}, ref) => {
     const { personalData, experience, experienceList, education, educationList, photoFile } = states
     return (
-        <div className="preview">
+        <div className="preview" ref={ref}>
             <div className="head">
                 <img className="head__photo" src={photoFile === null ? profilePhoto : photoFile} alt="" />
                  <Header data={personalData} />
@@ -30,6 +30,6 @@ const Preview = ({states}) => {
             </div>
         </div>
     )
-}
+})
 
 export default Preview
