@@ -13,4 +13,10 @@
     &--active {
         background: var(--btn-bg-active);
     }
+    &--print {
+        background: var(--btn-print-bg);
+        &:hover {
+            background: var(--btn-print-bg-hover);
+        }
+    }
 }

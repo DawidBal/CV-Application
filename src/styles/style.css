@@ -6,6 +6,8 @@
   --main: hsl(44, 95%, 55%);
   --secondary: hsl(155, 100%, 40%);
   --btn-bg: hsl(155, 100%, 30%);
+  --btn-print-bg: hsl(44, 95%, 55%);
+  --btn-print-bg-hover: hsl(44, 95%, 40%);
   --btn-bg-hover: hsl(155, 100%, 40%);
   --btn-bg-active: hsl(155, 100%, 50%);
 }
@@ -152,6 +154,12 @@
 .btn--active {
   background: var(--btn-bg-active);
 }
+.btn--print {
+  background: var(--btn-print-bg);
+}
+.btn--print:hover {
+  background: var(--btn-print-bg-hover);
+}
 
 .inputField {
   margin-bottom: 0.5em;
@@ -159,9 +167,9 @@
 }
 
 .input {
+  padding: 0.3em;
   border: 1px solid var(--aside-bg);
   border-radius: 5px;
-  padding: 0.3em;
   background: var(--aside-bg);
   color: var(--white);
 }
